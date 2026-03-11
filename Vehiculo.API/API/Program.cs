@@ -30,6 +30,22 @@ builder.Services.AddScoped<IMarcaDA, MarcaDA>();
 builder.Services.AddScoped<IModeloDA, ModeloDA>();
 builder.Services.AddScoped<IMarcaFlujo, MarcaFlujo>();
 builder.Services.AddScoped<IModeloFlujo, ModeloFlujo>();
+
+
+var politicaAcceso = "Politica de acceso";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: politicaAcceso,
+                      policy =>
+                      {
+                          policy.WithOrigins("https://localhost", "https://localhost:50427", "https://localhost:50428")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod();
+                      });
+});
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
