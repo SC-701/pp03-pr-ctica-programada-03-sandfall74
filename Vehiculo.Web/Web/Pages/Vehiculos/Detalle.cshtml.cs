@@ -19,7 +19,7 @@ namespace Web.Pages.Vehiculos
         {
             if (id == null)
             {
-                RedirectToPage("Index");
+                RedirectToPage("./Index");
             }
             string endpoint = _configuracion.ObtenerMetodo("ApiEndPoints", "ObtenerVehiculo");
             var cliente = new HttpClient();
@@ -29,6 +29,10 @@ namespace Web.Pages.Vehiculos
             var resultado = await respuesta.Content.ReadAsStringAsync();
             var opciones = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
             Vehiculo = JsonSerializer.Deserialize<VehiculoResponse>(resultado, opciones);
+            if (Vehiculo==null)
+            {
+                RedirectToPage("./Index");
+            }
         }
     }
 }
