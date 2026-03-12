@@ -17,7 +17,7 @@ namespace DA
             _sqlConnection = _repositorioDapper.ObtenerRepositorio();
         }
 
-        #region Operaciones
+       
         public async Task<IEnumerable<Marca>> Obtener()
         {
             string query = @"ObtenerMarcas";
@@ -26,6 +26,5 @@ namespace DA
         }
 
  
-        #endregion
     }
 }

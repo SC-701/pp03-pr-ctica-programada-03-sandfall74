@@ -17,7 +17,7 @@ namespace DA
             _sqlConnection = _repositorioDapper.ObtenerRepositorio();
         }
 
-        #region Operaciones
+        
 
         public async Task<IEnumerable<Modelo>> Obtener(Guid IdMarca)
         {
@@ -26,7 +26,6 @@ namespace DA
                 new { IdMarca = IdMarca });
             return resultadoConsulta;
         }
-        #endregion
 
     }
 }
