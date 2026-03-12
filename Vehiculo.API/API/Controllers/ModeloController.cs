@@ -17,7 +17,7 @@ namespace API.Controllers
             _modeloFlujo = modeloFLujo;
             _logger = logger;
         }
-        #region Operaciones
+        
         [HttpGet("{IdMarca}")]
         public async Task<IActionResult> Obtener(Guid IdMarca)
         {
@@ -26,7 +26,6 @@ namespace API.Controllers
                 return NoContent();
             return Ok(resultado);
         }
-        #endregion Operaciones
 
     }
 }

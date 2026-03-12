@@ -17,7 +17,6 @@ namespace API.Controllers
             _marcaFlujo = marcaFLujo;
             _logger = logger;
         }
-        #region Operaciones
         [HttpGet]
         public async Task<IActionResult> Obtener()
         {
@@ -26,7 +25,6 @@ namespace API.Controllers
                 return NoContent();
             return Ok(resultado);
         }
-        #endregion Operaciones
 
     }
 }
